@@ -36,7 +36,7 @@ for account in accounts['data']:
 	currency = account['balance']['currency']
 	vc_balance = account['balance']['amount']
 	#print "Total of cash investments  " + str(initial_total)
-	#print "Virutal currency amount " + str(vc_balance) + ' ' + str(currency)
+	#print "Virtual currency amount " + str(vc_balance) + ' ' + str(currency)
 
 	response = urllib2.urlopen('https://api.coinbase.com/v2/exchange-rates?currency='+ str(currency))
 	exchange_rates = json.load(response) 
@@ -49,10 +49,10 @@ for account in accounts['data']:
 	current_value = float(market_price) * float(vc_balance)
 	#print "current value " + str(current_value)
 
-	precentage_change = 100 * (current_value - initial_total) / initial_total
-	if precentage_change < 0:
+	percentage_change = 100 * (current_value - initial_total) / initial_total
+	if percentage_change < 0:
 		colour = 'red'
 	else:
 		colour = 'green'
 
-	print currency + ' % change ' + str(round(precentage_change,2)) +' | color=' + colour
+	print currency + ' % change ' + str(round(percentage_change,2)) +' | color=' + colour
