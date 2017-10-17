@@ -10,6 +10,14 @@ This script is designed to query against an active coinbase account with the API
 * Set the following envrionment variables
 	* COINBASE_KEY -> coinbase API key
 	* COINBASE_SECRET -> coinbase API secret
+* Minimum Coinbase API access
+	* Wallets that you want to compare (BTC, LTE, ETH)
+	* wallet:accounts:read 
+	* wallet:buys:read 
+	* wallet:checkouts:read 
+	* wallet:deposits:read 
+	* wallet:sells:read 
+	* wallet:withdrawals:read
 
 ## How to run it 
 ```javascript
