@@ -1,5 +1,7 @@
 # Coinbase Percentage Change Tracker
 
+This script is designed to query against an active coinbase account with the API enabled. The script will query your account obtaining the amount of each crypto currency that you've bought. This is then compared against the current sell value of the same currency for the amount you have. The percentage change is then outputted.
+
 ## Prequisites
 * Python2.7
 * Coinbase Python Library
