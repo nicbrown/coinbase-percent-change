@@ -20,12 +20,14 @@ for account in accounts['data']:
 	account_id = account['id']
 	deposits = client.get_buys(account_id)
 	withdrawls = client.get_sells(account_id)
-
+	print deposits
 	for deposit in deposits['data']:
-		running_buy = running_buy + float(deposit['subtotal']['amount'])
+		if deposit['status'] == "completed":
+			running_buy = running_buy + float(deposit['subtotal']['amount'])
 
 	for withdrawl in withdrawls['data']:
-		running_sell = running_sell + float(withdrawl['subtotal']['amount'])
+		if deposit['status'] == "completed":
+			running_sell = running_sell + float(withdrawl['subtotal']['amount'])
 
 	initial_total = running_buy - running_sell
 	
