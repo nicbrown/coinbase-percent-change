@@ -20,7 +20,6 @@ for account in accounts['data']:
 	account_id = account['id']
 	deposits = client.get_buys(account_id)
 	withdrawls = client.get_sells(account_id)
-	print deposits
 	for deposit in deposits['data']:
 		if deposit['status'] == "completed":
 			running_buy = running_buy + float(deposit['subtotal']['amount'])
@@ -35,7 +34,7 @@ for account in accounts['data']:
 
 	currency = account['balance']['currency']
 	vc_balance = account['balance']['amount']
-	#print "Total of cash investments  " + str(initial_total)
+	print "Total of cash investments  " + str(initial_total)
 	#print "Virtual currency amount " + str(vc_balance) + ' ' + str(currency)
 
 	response = urllib2.urlopen('https://api.coinbase.com/v2/exchange-rates?currency='+ str(currency))
