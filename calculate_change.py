@@ -11,10 +11,12 @@ client = Client(api_key, api_secret, api_version='2017-05-19')
 
 accounts = client.get_accounts()
 
-running_buy = 0
-running_sell = 0
 
 for account in accounts['data']:
+
+	running_buy = 0
+	running_sell = 0
+	initial_total =0
 
 	# Generate the total amount of cash that is currently invested
 	account_id = account['id']
